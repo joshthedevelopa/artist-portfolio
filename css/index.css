@@ -1,0 +1,354 @@
+@import url('./basic.css');
+
+header {
+    background-color: var(--dark-brown);
+    height: 80px;
+    color: var(--smoke);
+}
+
+nav {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu > * {
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.nav-menu > *:hover {
+    color: #f5f5f5;
+    text-decoration: underline;
+    text-underline-offset: 25%;
+}
+
+main {
+    background: radial-gradient(
+        97.57% 210.75% at 0.9% 2.98%, 
+        #814c1a55 0, 
+        #3A383455 100%
+    );
+    height: calc(100vh - 80px);
+    width: 100%;
+    overflow-y: auto;
+}
+
+.p-left {
+    padding-left: 5%;
+}
+
+#dark-card {
+    background-color: var(--dark-brown);
+    border-radius: 2rem 0 0 2rem;
+    padding: 2.5% 8%;
+}
+
+#white-bordered-card {
+    padding: 2.5% 8%;
+    border: white 1.5px solid;
+} 
+
+#img-slide {
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+
+#img-slide > .slide-imgs {
+    height: 100%;
+    white-space: nowrap;
+    list-style: none;
+    position: relative;
+    left: 0;
+}
+
+.slide-imgs > li {
+    display: inline-block;
+    width: 400px;
+    height: 100%;
+}
+
+.slide-imgs > li > img {
+    width: 100%;
+    height: auto;
+    transform: scale(0.5);
+}
+
+.slide-imgs > li.active > img {
+    transform: scale(1);
+}
+
+#img-slide > .slide-btns {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.slide-btns > .action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: var(--smoke) 2.5px solid;
+    border-radius: 100%;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    color: var(--smoke);
+    transition: var(--ease-in-out-2s);
+}
+
+.slide-btns > .action:hover {
+    transform: scale(1.05);
+    color: white;
+}
+
+.slide-btns > .action:active {
+    transform: scale(0.95);
+}
+
+#art-display {
+    padding: 8%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+}
+
+#art-display > .grid {
+    gap: 2rem;
+}
+
+#art-display > .grid > .art > img {
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+#art-display > .grid > .art > h4 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-align: center;
+    color: white
+}
+
+#art-display > .grid > .art > span {
+    color: var(--primary-lighter);
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    display: block;
+}
+
+#art-display > .dot-indicator {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 4rem 0;
+}
+
+.dot-indicator > li {
+    width: 0.65rem;
+    height: 0.65rem;
+    background-color: whitesmoke;
+    border-radius: 100%;
+    margin: 0.2rem;
+}
+
+.dot-indicator > li:first-child {
+    background-color: var(--primary);
+}
+
+#reviews > .grid {
+    margin: auto;
+    padding: 4%;
+    max-width: 1024px;
+    gap: 2rem;
+}
+
+#reviews > .grid > div {
+    border: solid 1px #9E9D9D;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#reviews > .grid > div > p {
+    padding: 0.5rem;
+    color: var(--smoke);
+}
+
+#reviews > .grid > div > div {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+#reviews > .grid > div > div > span {
+    padding: 0 0.5rem;
+    color: var(--primary-lighter);
+}
+
+#exhibition > .flex-1\/2 {
+    padding: 2rem;
+}
+
+#exhibition .exhibition-list {
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0.5rem;
+}
+
+#exhibition .image-holder {
+    position: relative;
+    width: 520px;
+    height: 600px;
+    overflow: hidden;
+}
+
+#exhibition .image-holder > img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+#exhibition .image-holder > img.active {
+    opacity: 1;
+}
+
+.exhibition-card {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px #ffffff77;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+
+.exhibition-card > h3 {
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: #ffffff77;
+}
+
+.exhibition-card > p {
+    color: #D5D5D577;
+    font-weight: 400;
+    font-size: 1rem;
+    height: 100%;
+    text-overflow: ellipsis;
+}
+
+.exhibition-card > span {
+    color: #F8821677;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.exhibition-card.active {
+    border-color: white;
+}
+
+.exhibition-card.active > h3 {
+    color: white;
+}
+
+.exhibition-card.active > p {
+    color: var(--smoke);
+}
+
+.exhibition-card.active > span {
+    color: var(--primary);
+}
+
+.form-container {
+    width: 70%;
+    border: solid 1px white;
+    border-radius: 1rem;
+    display: flex;
+}
+
+.form-container > div {
+    flex: 1;
+    padding: 2rem 1rem;
+}
+
+.form-group {
+    padding: 1rem;
+    width: 100%
+}
+
+.form-group label, .form-group input {
+    display: block;
+}
+
+.form-group label {
+    color: #FBF7F7;
+    font-weight: 300;
+    font-size: 1.5rem;
+    padding-bottom: 0.4rem;
+}
+
+.form-group input {
+    background-color: #404040;
+    color: var(--smoke);
+    border-radius: 0.5rem;
+    border: solid 1px var(--smoke);
+    padding: 0.8rem;
+    width: 100%
+}
+
+.form-group textarea {
+    background-color: #404040;
+    color: var(--smoke);
+    border-radius: 0.5rem;
+    border: solid 1px var(--smoke);
+    padding: 0.8rem;
+    width: 100%;
+    height: 400px;
+}
+
+.form-group button {
+    background-color: transparent;
+    border: solid 1px var(--smoke);
+    padding: 0.8rem;
+    color: var(--smoke);
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+#form > div:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    flex: 1;
+}
+
+#form .action-item  > span {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+}
