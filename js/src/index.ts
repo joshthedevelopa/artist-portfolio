@@ -1,6 +1,7 @@
 import Slider from './slider.js';
 
 window.addEventListener('load', function () {
+    console.log("Hello")
     const slider = new Slider(document.getElementById("img-slide")!);
     
     const slideActionBtns = document.querySelectorAll(".slide-btns > .action");
