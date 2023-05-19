@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: ${{ github.repository }}
+          repository: joshthedevelopa/artist-portfolio
 
       - name: Setup node
         uses: actions/setup-node@v3
