@@ -10,9 +10,8 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-
     name: Node 18 Server
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
@@ -28,6 +27,7 @@ jobs:
       - run: npm run build
 
       - name: Run my action
-        uses: ./
+        uses: actions/upload-artifact@v3
         with:
-          repository: joshthedevelopa/artist-portfolio
+          name: dist
+          path: dist/
